@@ -1,7 +1,9 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 
+# next line imports a function from scraperwiki. it's not related to the lxml.html library
 import scraperwiki
+# next line imports the lxml.html library
 import lxml.html
 #
 # # Read in a page
@@ -9,8 +11,11 @@ html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sit
 print html
 #
 # # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
+# use the .fromstring function to turn html into a lxml 'object', a variable called 'root'
+root = lxml.html.fromstring(html)
+# use .cssselect method on root to grab 'td' tags and put in tds
+tds = root.cssselect('td')
+print tds
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
