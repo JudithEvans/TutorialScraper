@@ -18,7 +18,7 @@ tds = root.cssselect('td')
 # print tds
 
 for td in tds:
-  print lxml.html.tostring (td)
+  print lxml.html.tostring(td)
   print td.text
   
 #
