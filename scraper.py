@@ -27,7 +27,7 @@ for td in tds:
   # so each time it runs, the index number increases by 1
   indexno = indexno + 1
   record = {"td" : td.text, "index": indexno}
-  print record
+  # print record
   scraperwiki.sqlite.save(["index"],record)
 #
 # # Write out to the sqlite database using scraperwiki library
