@@ -21,10 +21,14 @@ tds = root.cssselect('td')
   # print lxml.html.tostring(td)
   # print td.text
 
-for td in tds:
-  record = {"cell" : td.text}
+# creating a second column. in addition to the tds -- that will contain a unique index number
+indexno = 0
+for td in tds: 
+  # so each time it runs, the index number increases by 1
+  indexno = indexno + 1
+  record = {"td" : td.text, "index": indexno}
   print record
-  scraperwiki.sqlite.save(["cell"],record)
+  scraperwiki.sqlite.save(["index"],record)
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
