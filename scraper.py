@@ -8,7 +8,7 @@ import lxml.html
 #
 # # Read in a page
 html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
-print html
+# print html
 #
 # # Find something on the page using css selectors
 # use the .fromstring function to turn html into a lxml 'object', a variable called 'root'
